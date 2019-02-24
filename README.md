@@ -1,10 +1,7 @@
 # MailgunCatcher
-Short description and motivation.
+Catch mailgun events and report to bugsnag
 
 ## Usage
-How to use my plugin.
-
-## Installation
 Add this line to your application's Gemfile:
 
 ```ruby
@@ -16,10 +13,14 @@ And then execute:
 $ bundle
 ```
 
-Or install it yourself as:
-```bash
-$ gem install mailgun_catcher
+Add to routes:
+```ruby
+mount MailgunCatcher::Engine, at: "/mailgun_catcher"
 ```
+
+Configire webhook on mailgun:
+![](http://take.ms/HZRmm)
+
 
 ## Contributing
 Contribution directions go here.
