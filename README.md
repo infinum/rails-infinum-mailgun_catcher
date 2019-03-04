@@ -18,7 +18,13 @@ Add to routes:
 mount MailgunCatcher::Engine, at: "/mailgun_catcher"
 ```
 
-Configire webhook on mailgun:
+To configure an exact path for the webhooks controller create an initializer (`mailgun_catcher.rb`) with the following content:
+```ruby
+MailgunCatcher::Engine.config.webhooks_path = 'custom_path'
+```
+This will allow you change the default webhook route from `/webhooks` to `/custom_path`.
+
+Configure webhook on mailgun:
 ![](http://take.ms/HZRmm)
 
 
