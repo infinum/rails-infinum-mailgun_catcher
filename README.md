@@ -18,7 +18,12 @@ Add to routes:
 mount MailgunCatcher::Engine, at: "/mailgun_catcher"
 ```
 
-Configire webhook on mailgun:
+Configure custom controller name in an initializer (optional):
+```ruby
+MailgunCatcher::Engine.config.controller_name = 'custom_controller'
+```
+
+Configure webhook on mailgun:
 ![](http://take.ms/HZRmm)
 
 
