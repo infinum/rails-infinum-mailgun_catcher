@@ -2,7 +2,7 @@ module MailgunCatcher
   class Engine < ::Rails::Engine
     extend Dry::Configurable
 
-    setting :resource_name, 'webhooks'
+    setting :webhooks_path, 'webhooks'
 
     isolate_namespace MailgunCatcher
   end
