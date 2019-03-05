@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.version     = MailgunCatcher::VERSION
   spec.authors     = ['Stjepan Hadjić']
   spec.email       = ['d4be4st@gmail.com']
-  spec.homepage    = 'https://github.com/infinum/rails-infinum-maingun_catcher'
-  spec.summary     = 'Engine for maingun hooks'
-  spec.description = 'Engine for maingun hooks'
+  spec.homepage    = 'https://github.com/infinum/rails-infinum-mailgun_catcher'
+  spec.summary     = 'Engine for mailgun hooks'
+  spec.description = 'Engine for mailgun hooks'
   spec.license     = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
