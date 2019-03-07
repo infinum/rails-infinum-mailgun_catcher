@@ -14,6 +14,10 @@ module MailgunCatcher
       "[#{severity}] [#{reason}] #{recipient}: #{delivery_status}"
     end
 
+    def grouping_error_message
+      "[#{severity}] [#{reason}] #{recipient}"
+    end
+
     def event_data
       params.fetch('event-data', {})
     end

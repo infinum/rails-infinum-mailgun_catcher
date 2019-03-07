@@ -16,7 +16,7 @@ module MailgunCatcher
     end
 
     def bugsnag_grouping_hash
-      event.error_message
+      event.grouping_error_message
     end
   end
 end
