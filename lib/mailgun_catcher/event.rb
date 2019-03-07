@@ -11,6 +11,10 @@ module MailgunCatcher
     end
 
     def error_message
+      "[#{severity}] [#{reason}] #{recipient}: #{delivery_status}"
+    end
+
+    def grouping_error_message
       "[#{severity}] [#{reason}] #{recipient}"
     end
 
@@ -19,6 +23,21 @@ module MailgunCatcher
     end
 
     private
+
+    def delivery_status
+      return delivery_status_message if delivery_status_message.present?
+      return delivery_status_description if delivery_status_description.present?
+
+      'missing delivery status message'
+    end
+
+    def delivery_status_message
+      event_data.fetch('delivery-status', {}).fetch('message', '')
+    end
+
+    def delivery_status_description
+      event_data.fetch('delivery-status', {}).fetch('description', '')
+    end
 
     def recipient
       event_data.fetch('recipient', 'no recipient')
