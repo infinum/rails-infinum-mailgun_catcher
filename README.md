@@ -27,6 +27,24 @@ This will allow you change the default webhook route from `/webhooks` to `/custo
 Configure webhook on mailgun:
 ![](http://take.ms/HZRmm)
 
+## Notifiers
+Library supports event dispatching via notifier. Notifier is any object that responds to `notify` message. By default, events are notified on Bugsnag service, but you can provide your own notifier implementation by configuring `MailgunCatcher.config.notifier`.
+
+### Configuring custom notifier
+```ruby
+class MailgunNotifier
+  def notify(event)
+    puts event
+  end
+end
+```
+
+register custom notifier implementation through initializer
+```ruby
+MailgunCatcher.setup do |config|
+  config.notifier = MailgunNotifier.new
+end
+```
 
 ## Contributing
 Contribution directions go here.

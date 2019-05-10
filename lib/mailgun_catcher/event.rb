@@ -6,8 +6,8 @@ module MailgunCatcher
       @params = params.to_unsafe_h
     end
 
-    def notify_bugsnag
-      Bugsnag.notify(EventError.new(self))
+    def notify
+      MailgunCatcher.config.notifier.notify(EventError.new(self))
     end
 
     def error_message
