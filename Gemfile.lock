@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mailgun_catcher (0.6.0)
+    mailgun_catcher (1.0.0)
       bugsnag
       dry-configurable
       rails (> 4)
