@@ -1,13 +1,12 @@
 require 'dry-configurable'
 require 'mailgun_catcher/engine'
 require 'mailgun_catcher/event'
-require 'mailgun_catcher/event_error'
 require 'mailgun_catcher/notifier/bugsnag'
 
 module MailgunCatcher
   extend Dry::Configurable
 
-  setting(:notifier, MailgunCatcher::Notifier::Bugsnag.new)
+  setting(:notifiers, ["MailgunCatcher::Notifier::Bugsnag"])
 
   def self.setup
     yield config

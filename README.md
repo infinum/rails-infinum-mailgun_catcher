@@ -42,7 +42,7 @@ end
 register custom notifier implementation through initializer
 ```ruby
 MailgunCatcher.setup do |config|
-  config.notifier = MailgunNotifier.new
+  config.notifiers = ["MailgunCatcher::Notifier::Bugsnag", "MailgunNotifier"]
 end
 ```
 

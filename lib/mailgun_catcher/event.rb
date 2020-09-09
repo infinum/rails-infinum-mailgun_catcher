@@ -7,7 +7,7 @@ module MailgunCatcher
     end
 
     def notify
-      MailgunCatcher.config.notifier.notify(EventError.new(self))
+      notifiers.each { |notifier| notifier.notify(self) }
     end
 
     def error_message
@@ -23,6 +23,10 @@ module MailgunCatcher
     end
 
     private
+
+    def notifiers
+      MailgunCatcher.config.notifiers.map { |notifier| notifier.constantize.new }
+    end
 
     def delivery_status
       return delivery_status_message if delivery_status_message.present?
