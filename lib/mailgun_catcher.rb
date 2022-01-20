@@ -6,7 +6,7 @@ require 'mailgun_catcher/notifier/bugsnag'
 module MailgunCatcher
   extend Dry::Configurable
 
-  setting(:notifiers, ["MailgunCatcher::Notifier::Bugsnag"])
+  setting(:notifiers, default: ["MailgunCatcher::Notifier::Bugsnag"])
 
   def self.setup
     yield config
